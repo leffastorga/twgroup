@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Auth::routes();
+Route::resource('publications', 'PublicationController')->middleware('auth');
+Route::resource('comments', 'CommentController')->middleware('auth');
+Route::resource('publications.comments', 'CommentController')->shallow()->middleware('auth');
+Route::get('/home', 'HomeController@index')->name('home');
