@@ -34,7 +34,7 @@
                         <div class="row">
                         @csrf
                             <div class="form-group col-xs-12 col-sm-9 col-lg-10">
-                                <textarea class="form-control" id="content" name="content" required=""></textarea>
+                                <textarea class="form-control" id="content" name="content" required="required"></textarea>
                             </div>
                         </div>  	
                     </fieldset>

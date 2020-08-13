@@ -7,9 +7,9 @@
         <h2>Publicaciones de TWGroup</h2>
     </div>
     <div class="col-sm-6">
-        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
+        <a class="btn btn-primary float-right" href="{{ route('publications.create') }}">
             Nueva publicación
-        </button>
+        </a>
     </div>
   </div>
 
@@ -52,34 +52,5 @@
 <p>No se han encontrado publicaciones</p>
 @endif
 </div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nueva publicidad</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form method="post" action="{{ route('publications.store') }}">
-        <div class="modal-body">
-                <div class="form-group">
-                    @csrf
-                    <label for="title">Titulo</label>
-                    <input type="text" class="form-control" name="title"/>
-                </div>
-                <div class="form-group">
-                    <label for="content">Contenido</label>
-                    <textarea class="form-control" name="content"></textarea>
-                </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+
 @endsection
